@@ -1,0 +1,64 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix gtfs: <http://vocab.gtfs.org/terms#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix schema: <http://schema.org/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix idlab-fn: <http://example.com/idlab/function/> .
+
+
+<#frequencies5t>
+    rml:logicalSource [ rml:source "FREQUENCIES.csv" ];
+    rr:subjectMap [
+        rr:template "http://transport.linkeddata.es/madrid/metro/frequency/{trip_id}-{start_time}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate gtfs:exactTimes;
+        rr:objectMap [ fnml:execution <#frequencies5exet>; rr:datatype xsd:boolean ];
+    ].
+
+<#frequencies5exet>
+    fnml:function grel:string_replace ;
+    fnml:input
+        [
+            fnml:parameter grel:valueParam ;
+            fnml:valueMap [
+                fnml:execution <#frequencies5exef>
+            ]
+        ] ,
+        [
+            fnml:parameter grel:value_find ;
+            fnml:value "1"
+        ] ,
+        [
+            fnml:parameter grel:value_replace  ;
+            fnml:value "true"
+        ] .
+
+<#frequencies5exef>
+    fnml:function grel:string_replace ;
+    fnml:input
+        [
+            fnml:parameter grel:valueParam ;
+            fnml:valueMap [
+                rml:reference "exact_times"
+            ]
+        ] ,
+        [
+            fnml:parameter grel:value_find ;
+            fnml:value "0"
+        ] ,
+        [
+            fnml:parameter grel:value_replace  ;
+            fnml:value "false"
+        ] .

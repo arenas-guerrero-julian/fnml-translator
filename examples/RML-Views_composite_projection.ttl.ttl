@@ -1,0 +1,14 @@
+@prefix ns1: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ns2: <http://www.w3.org/ns/r2rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#TM0> ns1:logicalSource [ ns1:query """SELECT trip_id, start_time, REPLACE(REPLACE(exact_times, '0', 'false'), '1', 'true') AS va423020a94
+FROM 'FREQUENCIES.csv'""" ;
+            ns1:referenceFormulation "http://semweb.mmlab.be/ns/ql#CSV" ] ;
+    ns2:predicateObjectMap [ ns2:objectMap [ ns1:reference "va423020a94" ;
+                    ns2:datatype xsd:boolean ;
+                    ns2:termType ns2:Literal ] ;
+            ns2:predicateMap [ ns2:constant <http://vocab.gtfs.org/terms#exactTimes> ] ] ;
+    ns2:subjectMap [ ns2:template "http://transport.linkeddata.es/madrid/metro/frequency/{trip_id}-{start_time}" ;
+            ns2:termType ns2:IRI ] .
+

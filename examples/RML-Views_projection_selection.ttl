@@ -1,0 +1,26 @@
+@prefix ns1: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ns2: <http://www.w3.org/ns/r2rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#TM0> ns1:logicalSource [ ns1:query """SELECT trip_id, start_time, REPLACE(exact_times, '1', 'true') AS v2d2bb5b65c
+FROM 'FREQUENCIES.csv'
+WHERE exact_times='1'""" ;
+            ns1:referenceFormulation "http://semweb.mmlab.be/ns/ql#CSV" ] ;
+    ns2:predicateObjectMap [ ns2:objectMap [ ns1:reference "v2d2bb5b65c" ;
+                    ns2:datatype xsd:boolean ;
+                    ns2:termType ns2:Literal ] ;
+            ns2:predicateMap [ ns2:constant <http://vocab.gtfs.org/terms#exactTimes> ] ] ;
+    ns2:subjectMap [ ns2:template "http://transport.linkeddata.es/madrid/metro/frequency/{trip_id}-{start_time}" ;
+            ns2:termType ns2:IRI ] .
+
+<#TM1> ns1:logicalSource [ ns1:query """SELECT REPLACE(exact_times, '0', 'false') AS v0ed75afae6, trip_id, start_time
+FROM 'FREQUENCIES.csv'
+WHERE exact_times='0'""" ;
+            ns1:referenceFormulation "http://semweb.mmlab.be/ns/ql#CSV" ] ;
+    ns2:predicateObjectMap [ ns2:objectMap [ ns1:reference "v0ed75afae6" ;
+                    ns2:datatype xsd:boolean ;
+                    ns2:termType ns2:Literal ] ;
+            ns2:predicateMap [ ns2:constant <http://vocab.gtfs.org/terms#exactTimes> ] ] ;
+    ns2:subjectMap [ ns2:template "http://transport.linkeddata.es/madrid/metro/frequency/{trip_id}-{start_time}" ;
+            ns2:termType ns2:IRI ] .
+

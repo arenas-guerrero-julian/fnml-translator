@@ -1,5 +1,7 @@
 # RML-FNML Translator
 
+RML-FNML translator unfolds data transformation defined in RML-FNML to RML Views.
+
 ## Install
 
 ```

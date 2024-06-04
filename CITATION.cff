@@ -12,9 +12,9 @@ preferred-citation:
       given-names: Julián
   year: 2024
   collection-title: "Proceedings of the 24th International Conference on Web Engineering"
-  start: 
-  end: 
-  doi: 
+  #start: 
+  #end: 
+  #doi: 
   title: "Handling Data Transformations in Virtual Knowledge Graphs with RML View Unfolding"
     - name: "24th International Conference on Web Engineering"
       city: Tampere

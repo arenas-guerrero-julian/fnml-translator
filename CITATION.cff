@@ -16,6 +16,7 @@ preferred-citation:
   #end: 
   #doi: 
   title: "Handling Data Transformations in Virtual Knowledge Graphs with RML View Unfolding"
+  conference:
     - name: "24th International Conference on Web Engineering"
       city: Tampere
       country: Finland

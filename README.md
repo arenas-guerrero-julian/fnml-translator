@@ -23,3 +23,18 @@ options:
                         whether to generate R2RML or RML (valid options: `R2RML` or `RML`)
   -v, --version         show program's version number and exit
 ```
+
+## Citing 💬
+
+```bib
+@inproceedings{arenas2024handling,
+  title = {{Handling Data Transformations in Virtual Knowledge Graphs with RML View Unfolding}},
+  author = {Arenas-Guerrero, Julián},
+  booktitle = {Proceedings of the 24th International Conference on Web Engineering},
+  publisher = {Springer Nature Switzerland},
+  pages = {424-427},
+  year = {2024},
+  isbn = {978-3-031-62362-2},
+  doi = {10.1007/978-3-031-62362-2_38},
+}
+```

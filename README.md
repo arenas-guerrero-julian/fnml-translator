@@ -26,7 +26,7 @@ options:
 
 ## Citing 💬
 
-Cite the associated [ICWE poster paper](https://oa.upm.es/82205/1/2024_ICWE_RML_FNML_to_RML_Views.pdf):
+Cite the associated [ICWE paper](https://oa.upm.es/82205/1/2024_ICWE_RML_FNML_to_RML_Views.pdf):
 
 ```bib
 @inproceedings{arenas2024handling,

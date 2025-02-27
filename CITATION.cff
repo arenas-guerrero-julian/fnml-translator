@@ -10,13 +10,15 @@ preferred-citation:
   authors:
     - family-names: Arenas-Guerrero
       given-names: Julián
+      orcid: http://orcid.org/0000-0002-3029-6469
   year: 2024
   collection-title: "Proceedings of the 24th International Conference on Web Engineering"
   #start: 
   #end: 
-  #doi: 
+  doi: 10.1007/978-3-031-62362-2_38
   title: "Handling Data Transformations in Virtual Knowledge Graphs with RML View Unfolding"
   conference:
     - name: "24th International Conference on Web Engineering"
       city: Tampere
       country: Finland
+  publisher: Springer Nature Switzerland
